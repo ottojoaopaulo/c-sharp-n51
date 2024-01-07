@@ -92,7 +92,7 @@ namespace SupermercadoForm
                 resultado = numero2 / numero1;
                 operacaoSimbolo = '/';
 
-                if(numero2 == 0)
+                if (numero2 == 0)
                 {
                     MessageBox.Show("Numero 2 nao pode ser 0");
                     textBoxNumero2.Focus();
@@ -125,6 +125,11 @@ namespace SupermercadoForm
             richTextBoxHistorico.Clear();
             comboBoxOperacao.SelectedItem = "Somar";
             textBoxNumero1.Focus();
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -97,6 +97,7 @@
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(100, 23);
             textBoxNome.TabIndex = 4;
+            textBoxNome.TextChanged += textBoxNome_TextChanged;
             // 
             // textBoxSobrenome
             // 
