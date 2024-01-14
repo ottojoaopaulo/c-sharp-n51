@@ -125,6 +125,7 @@
             comboBoxOperacao.Name = "comboBoxOperacao";
             comboBoxOperacao.Size = new Size(279, 23);
             comboBoxOperacao.TabIndex = 7;
+            comboBoxOperacao.SelectedIndexChanged += comboBoxOperacao_SelectedIndexChanged;
             // 
             // labelNumero2
             // 

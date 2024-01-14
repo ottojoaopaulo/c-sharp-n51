@@ -131,6 +131,11 @@ namespace SupermercadoForm
         {
 
         }
+
+        private void comboBoxOperacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
