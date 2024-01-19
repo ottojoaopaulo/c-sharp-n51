@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SupermercadoForm
 {
@@ -42,7 +44,7 @@ namespace SupermercadoForm
             SqlConnection conexao = new SqlConnection();
 
             //Definido o caminho onde encontra-se o banco de dados
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
             //Abre a conexao com banco de dados
             conexao.Open();
@@ -77,7 +79,7 @@ namespace SupermercadoForm
             //instanciar um objeto para abrir uma conexão ccmo banco de dados
             SqlConnection conexao = new SqlConnection();
 
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
             conexao.Open();
 
@@ -122,7 +124,7 @@ namespace SupermercadoForm
             SqlConnection conexao = new SqlConnection();
 
             //definir a connectString (onde o bd se encontra)
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
             //Abrir a conexao com banco de dados
             conexao.Open();
@@ -191,7 +193,7 @@ namespace SupermercadoForm
 
             SqlConnection conexao = new SqlConnection();
 
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
             conexao.Open();
 

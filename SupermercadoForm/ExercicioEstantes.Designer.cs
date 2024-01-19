@@ -32,10 +32,14 @@
             textBoxCadastrar = new TextBox();
             buttonCadastrar = new Button();
             label1 = new Label();
-            richTextBox1 = new RichTextBox();
+            richTextExibir = new RichTextBox();
             labelAlterar = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxAlterar = new ComboBox();
             buttonAlterar = new Button();
+            textBoxAlterar = new TextBox();
+            comboBoxExcluir = new ComboBox();
+            label2 = new Label();
+            buttonExcluir = new Button();
             SuspendLayout();
             // 
             // labelProduto
@@ -62,6 +66,7 @@
             buttonCadastrar.TabIndex = 2;
             buttonCadastrar.Text = "Cadastrar";
             buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
             // 
             // label1
             // 
@@ -72,13 +77,13 @@
             label1.TabIndex = 3;
             label1.Text = "Lista dos Produtos";
             // 
-            // richTextBox1
+            // richTextExibir
             // 
-            richTextBox1.Location = new Point(201, 99);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(394, 149);
-            richTextBox1.TabIndex = 4;
-            richTextBox1.Text = "";
+            richTextExibir.Location = new Point(201, 99);
+            richTextExibir.Name = "richTextExibir";
+            richTextExibir.Size = new Size(394, 149);
+            richTextExibir.TabIndex = 4;
+            richTextExibir.Text = "";
             // 
             // labelAlterar
             // 
@@ -89,13 +94,13 @@
             labelAlterar.TabIndex = 5;
             labelAlterar.Text = "Alterar Lista de Produtos";
             // 
-            // comboBox1
+            // comboBoxAlterar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(201, 272);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(394, 23);
-            comboBox1.TabIndex = 6;
+            comboBoxAlterar.FormattingEnabled = true;
+            comboBoxAlterar.Location = new Point(201, 272);
+            comboBoxAlterar.Name = "comboBoxAlterar";
+            comboBoxAlterar.Size = new Size(49, 23);
+            comboBoxAlterar.TabIndex = 6;
             // 
             // buttonAlterar
             // 
@@ -106,20 +111,58 @@
             buttonAlterar.Text = "Alterar";
             buttonAlterar.UseVisualStyleBackColor = true;
             // 
+            // textBoxAlterar
+            // 
+            textBoxAlterar.Location = new Point(283, 272);
+            textBoxAlterar.Name = "textBoxAlterar";
+            textBoxAlterar.Size = new Size(312, 23);
+            textBoxAlterar.TabIndex = 8;
+            // 
+            // comboBoxExcluir
+            // 
+            comboBoxExcluir.FormattingEnabled = true;
+            comboBoxExcluir.Location = new Point(201, 359);
+            comboBoxExcluir.Name = "comboBoxExcluir";
+            comboBoxExcluir.Size = new Size(121, 23);
+            comboBoxExcluir.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(41, 367);
+            label2.Name = "label2";
+            label2.Size = new Size(69, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Excluir Item";
+            // 
+            // buttonExcluir
+            // 
+            buttonExcluir.Location = new Point(405, 359);
+            buttonExcluir.Name = "buttonExcluir";
+            buttonExcluir.Size = new Size(190, 23);
+            buttonExcluir.TabIndex = 11;
+            buttonExcluir.Text = "Excluir";
+            buttonExcluir.UseVisualStyleBackColor = true;
+            // 
             // ExercicioEstantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonExcluir);
+            Controls.Add(label2);
+            Controls.Add(comboBoxExcluir);
+            Controls.Add(textBoxAlterar);
             Controls.Add(buttonAlterar);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxAlterar);
             Controls.Add(labelAlterar);
-            Controls.Add(richTextBox1);
+            Controls.Add(richTextExibir);
             Controls.Add(label1);
             Controls.Add(buttonCadastrar);
             Controls.Add(textBoxCadastrar);
             Controls.Add(labelProduto);
             Name = "ExercicioEstantes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ExercicioEstantes";
             ResumeLayout(false);
             PerformLayout();
@@ -131,9 +174,13 @@
         private TextBox textBoxCadastrar;
         private Button buttonCadastrar;
         private Label label1;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextExibir;
         private Label labelAlterar;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxAlterar;
         private Button buttonAlterar;
+        private TextBox textBoxAlterar;
+        private ComboBox comboBoxExcluir;
+        private Label label2;
+        private Button buttonExcluir;
     }
 }
