@@ -52,8 +52,6 @@ namespace SupermercadoForm
             //criado um objeto para executar o comando do INSERT da tabela de categorias
             SqlCommand comando = conexao.CreateCommand();
 
-
-
             //Informa o comando que sera executado, ou seja INSERT
             comando.CommandText = "INSERT INTO categorias (nome) VALUES ('" + nomeCatgoria + "')";
 
@@ -188,7 +186,7 @@ namespace SupermercadoForm
 
         private void AlterarCategoria()
         {
-            int codigoParaAlterar = Convert .ToInt32(textBoxCodigoParaAlterar.Text);
+            int codigoParaAlterar = Convert.ToInt32(textBoxCodigoParaAlterar.Text);
             string nome = textBoxNomeParaAlterar.Text;
 
             SqlConnection conexao = new SqlConnection();

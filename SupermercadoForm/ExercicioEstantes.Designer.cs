@@ -37,9 +37,10 @@
             comboBoxAlterar = new ComboBox();
             buttonAlterar = new Button();
             textBoxAlterar = new TextBox();
-            comboBoxExcluir = new ComboBox();
             label2 = new Label();
             buttonExcluir = new Button();
+            textBoxExcluir = new TextBox();
+            buttonExibir = new Button();
             SuspendLayout();
             // 
             // labelProduto
@@ -84,6 +85,7 @@
             richTextExibir.Size = new Size(394, 149);
             richTextExibir.TabIndex = 4;
             richTextExibir.Text = "";
+
             // 
             // labelAlterar
             // 
@@ -118,14 +120,6 @@
             textBoxAlterar.Size = new Size(312, 23);
             textBoxAlterar.TabIndex = 8;
             // 
-            // comboBoxExcluir
-            // 
-            comboBoxExcluir.FormattingEnabled = true;
-            comboBoxExcluir.Location = new Point(201, 359);
-            comboBoxExcluir.Name = "comboBoxExcluir";
-            comboBoxExcluir.Size = new Size(121, 23);
-            comboBoxExcluir.TabIndex = 9;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -137,21 +131,40 @@
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(405, 359);
+            buttonExcluir.Location = new Point(623, 363);
             buttonExcluir.Name = "buttonExcluir";
-            buttonExcluir.Size = new Size(190, 23);
+            buttonExcluir.Size = new Size(117, 23);
             buttonExcluir.TabIndex = 11;
             buttonExcluir.Text = "Excluir";
             buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click;
+            // 
+            // textBoxExcluir
+            // 
+            textBoxExcluir.Location = new Point(201, 363);
+            textBoxExcluir.Name = "textBoxExcluir";
+            textBoxExcluir.Size = new Size(394, 23);
+            textBoxExcluir.TabIndex = 12;
+            // 
+            // buttonExibir
+            // 
+            buttonExibir.Location = new Point(623, 99);
+            buttonExibir.Name = "buttonExibir";
+            buttonExibir.Size = new Size(117, 149);
+            buttonExibir.TabIndex = 13;
+            buttonExibir.Text = "Exibir";
+            buttonExibir.UseVisualStyleBackColor = true;
+            buttonExibir.Click += buttonExibir_Click;
             // 
             // ExercicioEstantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonExibir);
+            Controls.Add(textBoxExcluir);
             Controls.Add(buttonExcluir);
             Controls.Add(label2);
-            Controls.Add(comboBoxExcluir);
             Controls.Add(textBoxAlterar);
             Controls.Add(buttonAlterar);
             Controls.Add(comboBoxAlterar);
@@ -179,8 +192,9 @@
         private ComboBox comboBoxAlterar;
         private Button buttonAlterar;
         private TextBox textBoxAlterar;
-        private ComboBox comboBoxExcluir;
         private Label label2;
         private Button buttonExcluir;
+        private TextBox textBoxExcluir;
+        private Button buttonExibir;
     }
 }
