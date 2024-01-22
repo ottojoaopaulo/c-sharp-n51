@@ -15,7 +15,7 @@ namespace SupermercadoForm
 {
     public partial class EstanteForm : Form
     {
-        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
         private int IdparaEditar = -1;
 
         public EstanteForm()
@@ -32,12 +32,13 @@ namespace SupermercadoForm
             {
                 AtualizarEstante();
             }
-            
+
 
         }
 
         private void ListarEstantes()
         {
+            //obter texto para pesquisa
             string pesquisa = "%" + textBoxPesquisar.Text.Trim() + "%";//%Nes%
 
             //conecta com o banco de dados
@@ -48,7 +49,8 @@ namespace SupermercadoForm
             //definir o comando da consulta das estqantes
             SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome, sigla FROM estantes";
+            comando.CommandText = "SELECT id, nome, sigla FROM estantes WHERE nome LIKE @PESQUISA";
+            comando.Parameters.AddWithValue("@PESQUISA", pesquisa);
 
             //cria tabela em memoria e carrega registros da consulta (SELECT) das estantes
             DataTable tabelaEmMemoria = new DataTable();
@@ -125,6 +127,7 @@ namespace SupermercadoForm
 
         private void ApagarEstante()
         {
+            //verifica que existe linhas(registros) no dataGridView
             if (dataGridViewEstantes.Rows.Count == 0)
             {
                 MessageBox.Show(
@@ -188,6 +191,17 @@ namespace SupermercadoForm
 
         private void EditarEstante()
         {
+            //verifica que existe linhas(registros) no dataGridView
+            if (dataGridViewEstantes.Rows.Count == 0)
+            {
+                MessageBox.Show(
+                 "Nenhuma Estante cadastrada",
+                 "AVISO",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
+                return;
+            }
+
             //pegar alinha que o usuario selecionou
             DataGridViewRow linhaSelecionada = dataGridViewEstantes.SelectedRows[0];
 
@@ -222,7 +236,6 @@ namespace SupermercadoForm
 
         }
 
-
         private void AtualizarEstante()
         {
             //obter nome e sigla do form
@@ -251,6 +264,14 @@ namespace SupermercadoForm
                 ListarEstantes();//Atualiza o dataGriView(Tabela) com os registros das estantes do BD
                 LimparCampos();//Limpa os campos 
                 MessageBox.Show("Estante alterada com sucesso");
+            }
+        }
+
+        private void textBoxPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ListarEstantes();
             }
         }
     }

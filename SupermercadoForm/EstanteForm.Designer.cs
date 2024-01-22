@@ -65,7 +65,7 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(214, 204);
+            buttonSalvar.Location = new Point(124, 203);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(75, 23);
             buttonSalvar.TabIndex = 3;
@@ -78,15 +78,15 @@
             maskedTextBoxSigla.Location = new Point(26, 148);
             maskedTextBoxSigla.Mask = "AAA";
             maskedTextBoxSigla.Name = "maskedTextBoxSigla";
-            maskedTextBoxSigla.Size = new Size(263, 23);
-            maskedTextBoxSigla.TabIndex = 4;
+            maskedTextBoxSigla.Size = new Size(173, 23);
+            maskedTextBoxSigla.TabIndex = 2;
             // 
             // textBoxNome
             // 
             textBoxNome.Location = new Point(26, 77);
             textBoxNome.Name = "textBoxNome";
-            textBoxNome.Size = new Size(263, 23);
-            textBoxNome.TabIndex = 5;
+            textBoxNome.Size = new Size(173, 23);
+            textBoxNome.TabIndex = 1;
             // 
             // dataGridViewEstantes
             // 
@@ -94,11 +94,11 @@
             dataGridViewEstantes.AllowUserToDeleteRows = false;
             dataGridViewEstantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEstantes.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnSigla });
-            dataGridViewEstantes.Location = new Point(326, 77);
+            dataGridViewEstantes.Location = new Point(221, 58);
             dataGridViewEstantes.Name = "dataGridViewEstantes";
             dataGridViewEstantes.ReadOnly = true;
             dataGridViewEstantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewEstantes.Size = new Size(344, 343);
+            dataGridViewEstantes.Size = new Size(475, 369);
             dataGridViewEstantes.TabIndex = 6;
             // 
             // ColumnId
@@ -112,9 +112,11 @@
             ColumnNome.HeaderText = "Nome";
             ColumnNome.Name = "ColumnNome";
             ColumnNome.ReadOnly = true;
+            ColumnNome.Width = 230;
             // 
             // ColumnSigla
             // 
+            ColumnSigla.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnSigla.HeaderText = "Sigla";
             ColumnSigla.Name = "ColumnSigla";
             ColumnSigla.ReadOnly = true;
@@ -122,7 +124,7 @@
             // labeEstantes
             // 
             labeEstantes.AutoSize = true;
-            labeEstantes.Location = new Point(326, 37);
+            labeEstantes.Location = new Point(221, 37);
             labeEstantes.Name = "labeEstantes";
             labeEstantes.Size = new Size(50, 15);
             labeEstantes.TabIndex = 7;
@@ -130,20 +132,20 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(702, 120);
+            buttonEditar.Location = new Point(713, 120);
             buttonEditar.Name = "buttonEditar";
             buttonEditar.Size = new Size(75, 23);
-            buttonEditar.TabIndex = 8;
+            buttonEditar.TabIndex = 5;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
             buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(702, 76);
+            buttonApagar.Location = new Point(713, 76);
             buttonApagar.Name = "buttonApagar";
             buttonApagar.Size = new Size(75, 23);
-            buttonApagar.TabIndex = 9;
+            buttonApagar.TabIndex = 4;
             buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
             buttonApagar.Click += buttonApagar_Click;
@@ -151,7 +153,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(451, 37);
+            label1.Location = new Point(486, 37);
             label1.Name = "label1";
             label1.Size = new Size(53, 15);
             label1.TabIndex = 10;
@@ -159,10 +161,11 @@
             // 
             // textBoxPesquisar
             // 
-            textBoxPesquisar.Location = new Point(519, 29);
+            textBoxPesquisar.Location = new Point(545, 29);
             textBoxPesquisar.Name = "textBoxPesquisar";
             textBoxPesquisar.Size = new Size(151, 23);
             textBoxPesquisar.TabIndex = 11;
+            textBoxPesquisar.KeyDown += textBoxPesquisar_KeyDown;
             // 
             // EstanteForm
             // 
@@ -196,13 +199,13 @@
         private MaskedTextBox maskedTextBoxSigla;
         private TextBox textBoxNome;
         private DataGridView dataGridViewEstantes;
-        private DataGridViewTextBoxColumn ColumnId;
-        private DataGridViewTextBoxColumn ColumnNome;
-        private DataGridViewTextBoxColumn ColumnSigla;
         private Label labeEstantes;
         private Button buttonEditar;
         private Button buttonApagar;
         private Label label1;
         private TextBox textBoxPesquisar;
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnNome;
+        private DataGridViewTextBoxColumn ColumnSigla;
     }
 }

@@ -15,7 +15,7 @@ namespace SupermercadoForm
 {
     public partial class categoriaForm : Form
     {
-        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
         public categoriaForm()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace SupermercadoForm
             SqlCommand comando = conexao.CreateCommand();
 
             //Informa o comando que sera executado, ou seja INSERT
-            comando.CommandText = "INSERT INTO categorias (nome) VALUES ('" + nomeCatgoria + "')";
+            comando.CommandText = "INSERT INTO Supermercado (nome) VALUES ('" + nomeCatgoria + "')";
 
             //Executar INSERT na tabela categorias
             comando.ExecuteNonQuery();
@@ -84,7 +84,7 @@ namespace SupermercadoForm
 
             SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "SELECT id, nome FROM categorias";
+            comando.CommandText = "SELECT id, nome FROM Supermercado";
 
             DataTable tabelaEmMemoria = new DataTable();
 
@@ -132,7 +132,7 @@ namespace SupermercadoForm
             SqlCommand comando = conexao.CreateCommand();
 
             //definir o comando que sera executado
-            comando.CommandText = "DELETE FROM categorias WHERE id = " + codigoInformado;
+            comando.CommandText = "DELETE FROM Supermercado WHERE id = " + codigoInformado;
 
             //executar o comando para apagar a castegoria
             int quantidadeRegistrosApagados = comando.ExecuteNonQuery();
@@ -192,13 +192,13 @@ namespace SupermercadoForm
 
             SqlConnection conexao = new SqlConnection();
 
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
 
             conexao.Open();
 
             SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "UPDATE categorias SET nome = '" + nome + "' WHERE id = " + codigoParaAlterar;
+            comando.CommandText = "UPDATE Supermercado SET nome = '" + nome + "' WHERE id = " + codigoParaAlterar;
 
             int quantidadeAlterada = comando.ExecuteNonQuery();
 
