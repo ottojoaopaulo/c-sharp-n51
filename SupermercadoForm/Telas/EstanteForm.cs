@@ -11,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SupermercadoForm
+namespace SupermercadoForm.Telas
 {
     public partial class EstanteForm : Form
     {
-        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
         private int IdparaEditar = -1;
 
         public EstanteForm()

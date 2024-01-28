@@ -1,4 +1,4 @@
-﻿namespace SupermercadoForm
+﻿namespace SupermercadoForm.Telas
 {
     partial class MenuForm
     {
@@ -30,11 +30,12 @@
         {
             buttonCategorias = new Button();
             buttonEstantes = new Button();
+            buttonProdutos = new Button();
             SuspendLayout();
             // 
             // buttonCategorias
             // 
-            buttonCategorias.Location = new Point(238, 123);
+            buttonCategorias.Location = new Point(155, 148);
             buttonCategorias.Name = "buttonCategorias";
             buttonCategorias.Size = new Size(126, 130);
             buttonCategorias.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // buttonEstantes
             // 
-            buttonEstantes.Location = new Point(407, 123);
+            buttonEstantes.Location = new Point(324, 148);
             buttonEstantes.Name = "buttonEstantes";
             buttonEstantes.Size = new Size(126, 134);
             buttonEstantes.TabIndex = 1;
@@ -52,11 +53,22 @@
             buttonEstantes.UseVisualStyleBackColor = true;
             buttonEstantes.Click += buttonEstantes_Click;
             // 
+            // buttonProdutos
+            // 
+            buttonProdutos.Location = new Point(493, 148);
+            buttonProdutos.Name = "buttonProdutos";
+            buttonProdutos.Size = new Size(126, 134);
+            buttonProdutos.TabIndex = 2;
+            buttonProdutos.Text = "Produtos";
+            buttonProdutos.UseVisualStyleBackColor = true;
+            buttonProdutos.Click += buttonProdutos_Click;
+            // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonProdutos);
             Controls.Add(buttonEstantes);
             Controls.Add(buttonCategorias);
             Name = "MenuForm";
@@ -70,5 +82,6 @@
 
         private Button buttonCategorias;
         private Button buttonEstantes;
+        private Button buttonProdutos;
     }
 }

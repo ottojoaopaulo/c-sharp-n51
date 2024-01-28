@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using Microsoft.VisualBasic.ApplicationServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace SupermercadoForm
+namespace SupermercadoForm.Telas
 {
     public partial class categoriaForm : Form
     {

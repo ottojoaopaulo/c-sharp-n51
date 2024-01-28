@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SupermercadoForm.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SupermercadoForm
+namespace SupermercadoForm.Telas
 {
     public partial class MenuForm : Form
     {
@@ -36,6 +37,12 @@ namespace SupermercadoForm
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonProdutos_Click(object sender, EventArgs e)
+        {
+            var form = new ProdutoListaForm();
+            form.ShowDialog();
         }
     }
 }
