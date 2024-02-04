@@ -1,13 +1,5 @@
-﻿using SupermercadoForm.Repositorios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using SupermercadoForm.Entidades;
+using SupermercadoForm.Repositorios;
 
 namespace SupermercadoForm.Telas
 {
@@ -16,10 +8,29 @@ namespace SupermercadoForm.Telas
         public ProdutoCadastroForm()
         {
             InitializeComponent();
+            PreencherDadosCategorias();
+        }
+
+        private void PreencherDadosCategorias()
+        {
+            var categoriaRepositorio = new CategoriaRepositorio();
+
+            var categorias = categoriaRepositorio.ObterTodos();
+
+            for (int i = 0; i < categorias.Count; i++)
+            {
+                var categoria = categorias[i];
+
+                comboBoxCategorias.Items.Add(categoria);
+            }
+
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+
+            var categoria = (Categoria)comboBoxCategorias.SelectedItem;
+
             var nome = textBoxNome.Text;
             var precoUnitario = Convert.ToDecimal(textBoxPrecoUnitario.Text);
             var idCategotia = 1;
@@ -27,6 +38,11 @@ namespace SupermercadoForm.Telas
             var repositorio = new ProdutoRepositorio();
             repositorio.Cadastrar(nome, idCategotia, precoUnitario);
             MessageBox.Show("Produtocadastrado com sucesso");
+        }
+
+        private void PreencherDadosCategorias_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

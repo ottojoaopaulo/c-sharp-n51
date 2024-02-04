@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using SupermercadoForm.Repositorios;
 
 namespace SupermercadoForm.Telas
 {
@@ -19,7 +11,28 @@ namespace SupermercadoForm.Telas
 
         private void ProdutoListaForm_Load(object sender, EventArgs e)
         {
+            PreencherDataGridViewComProdutos();
+        }
 
+        private void PreencherDataGridViewComProdutos()
+        {
+            dataGridViewProdutos.Rows.Clear();
+
+            var categoriaRepositorio = new ProdutoRepositorio();
+
+            var produtos = categoriaRepositorio.ObterTodos();
+
+            for (int i = 0; i < produtos.Count; i++)
+            {
+                var produto = produtos[i];
+                dataGridViewProdutos.Rows.Add(new object[]
+                {
+                    produto.Id,
+                    produto.Nome,
+                    produto.Categoria.Nome,
+                    produto.PrecoUnitario
+                });
+            }
         }
 
         private void buttonNovo_Click(object sender, EventArgs e)

@@ -3,15 +3,8 @@
 	nome VARCHAR(50),
 	);
 
-CREATE TABLE estantes(
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50) NOT NULL,
-	sigla VARCHAR(3) NOT NULL,
-	);
 
-INSERT INTO estantes(nome, sigla) VALUES
-('Temperos', 'A01'),
-('Massas', 'A02');
+
 
 CREATE TABLE produtos(
 	id INT PRIMARY KEY IDENTITY(1,1),
@@ -35,3 +28,11 @@ INSERT INTO produtos (nome, preco_unitario, id_categoria) VALUES
 
 SELECT * FROM produtos;
 SELECT * FROM categorias;
+
+CREATE TABLE estoques(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	quantidade INT NOT NULL,
+	id_produto INT NOT NULL,
+	
+	FOREIGN KEY (id_produto) REFERENCES produtos(id)
+	);

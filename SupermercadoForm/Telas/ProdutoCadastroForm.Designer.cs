@@ -33,8 +33,8 @@
             labelPrecoUnitario = new Label();
             buttonSalvar = new Button();
             textBoxNome = new TextBox();
-            textBoxCategoria = new TextBox();
             textBoxPrecoUnitario = new TextBox();
+            comboBoxCategorias = new ComboBox();
             SuspendLayout();
             // 
             // labelNome
@@ -81,13 +81,6 @@
             textBoxNome.Size = new Size(325, 23);
             textBoxNome.TabIndex = 7;
             // 
-            // textBoxCategoria
-            // 
-            textBoxCategoria.Location = new Point(29, 152);
-            textBoxCategoria.Name = "textBoxCategoria";
-            textBoxCategoria.Size = new Size(325, 23);
-            textBoxCategoria.TabIndex = 8;
-            // 
             // textBoxPrecoUnitario
             // 
             textBoxPrecoUnitario.Location = new Point(29, 241);
@@ -95,13 +88,23 @@
             textBoxPrecoUnitario.Size = new Size(325, 23);
             textBoxPrecoUnitario.TabIndex = 9;
             // 
+            // comboBoxCategorias
+            // 
+            comboBoxCategorias.DisplayMember = "Nome";
+            comboBoxCategorias.FormattingEnabled = true;
+            comboBoxCategorias.Location = new Point(29, 149);
+            comboBoxCategorias.Name = "comboBoxCategorias";
+            comboBoxCategorias.Size = new Size(325, 23);
+            comboBoxCategorias.TabIndex = 10;
+            comboBoxCategorias.ValueMember = "Nome";
+            // 
             // ProdutoCadastroForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(386, 335);
+            Controls.Add(comboBoxCategorias);
             Controls.Add(textBoxPrecoUnitario);
-            Controls.Add(textBoxCategoria);
             Controls.Add(textBoxNome);
             Controls.Add(buttonSalvar);
             Controls.Add(labelPrecoUnitario);
@@ -121,7 +124,7 @@
         private Label labelPrecoUnitario;
         private Button buttonSalvar;
         private TextBox textBoxNome;
-        private TextBox textBoxCategoria;
         private TextBox textBoxPrecoUnitario;
+        private ComboBox comboBoxCategorias;
     }
 }
