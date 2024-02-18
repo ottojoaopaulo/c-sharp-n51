@@ -188,7 +188,7 @@
             // comboBoxExibir
             // 
             comboBoxExibir.FormattingEnabled = true;
-            comboBoxExibir.Items.AddRange(new object[] { "Código", "Nome", "Categortia", "Preço Unitario" });
+            comboBoxExibir.Items.AddRange(new object[] { "Código", "Nome", "Categoria", "Preço Unitário" });
             comboBoxExibir.Location = new Point(151, 38);
             comboBoxExibir.Name = "comboBoxExibir";
             comboBoxExibir.Size = new Size(121, 23);

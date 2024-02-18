@@ -134,7 +134,6 @@ namespace SupermercadoForm.Telas
                 buttonPaginacaoProximo.Enabled = true;
         }
 
-
         private void PreencherLabelQuantidadeTotalRegistros()
         {
             var produtoRepositorio = new ProdutoRepositorio();

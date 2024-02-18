@@ -34,7 +34,7 @@ namespace SupermercadoForm.Repositorios
             {
                 //obter o registro percorrido
                 var registro = tabelaEmMemoria.Rows[i];
-                var id = Convert.ToInt32(registro["idCategoria"]);
+                var id = Convert.ToInt32(registro["id"]);
                 var nome = registro["nome"].ToString();
 
                 //instanciado um objeto de categoria para que seja possivel adicionar na lista de categorias
@@ -47,6 +47,75 @@ namespace SupermercadoForm.Repositorios
             }
             //retornar a lista de categorias obtida na consulta SELECT
             return categorias;
+        }
+
+        public void Cadastrar(Categoria categoria)
+        {
+            var conexao = new ConexaoBancoDados();
+
+            var comando = conexao.Conectar();
+
+            comando.CommandText = "INSERT INTO categorias (nome) VALUES (@NOME)";
+
+            comando.Parameters.AddWithValue("@NOME", categoria.Nome);
+
+            comando.ExecuteNonQuery();
+
+            comando.Connection.Close();
+        }
+
+        public void Atualizar(Categoria categoria)
+        {
+            var conexao = new ConexaoBancoDados();
+
+            var comando = conexao.Conectar();
+
+            comando.CommandText = "UPDATE categorias SET nome = @NOME WHERE  id = @ID";
+
+            comando.Parameters.AddWithValue("@NOME", categoria.Nome);
+            comando.Parameters.AddWithValue("@ID", categoria.Id);
+
+            comando.ExecuteNonQuery();
+
+            comando.Connection.Close();
+        }
+
+        public void Apagar(int id)
+        {
+            var conexao = new ConexaoBancoDados();
+
+            var comando = conexao.Conectar();
+
+            comando.CommandText = "DELETE FROM categorias WHERE id = @ID";
+
+            comando.Parameters.AddWithValue("@ID", id);
+
+            comando.ExecuteNonQuery();
+
+            comando.Connection.Close();
+        }
+
+        public Categoria ObterPorId(int id)
+        {
+            var conexao = new ConexaoBancoDados();
+
+            var comando = conexao.Conectar();
+
+            comando.CommandText = "SELECT id, nome FROM categorias WHERE id = @ID";
+
+            var tabelaEmMemoria = new DataTable();
+
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            comando.Connection.Close();
+
+            var registro = tabelaEmMemoria.Rows[0];
+            var nome = registro["nome"].ToString();
+
+            var categoria = new Categoria();
+            categoria.Id = id;
+            categoria.Nome = nome;
+            return categoria;
         }
     }
 }

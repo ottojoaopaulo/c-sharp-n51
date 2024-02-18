@@ -40,13 +40,13 @@ namespace SupermercadoForm.Modelos
             {
                 value = value.ToLower();
 
-                if (value == "codigo")
+                if (value == "código")
                     campo = "produtos.id";
                 else if (value == "nome")
                     campo = "produtos.nome";
                 else if (value == "categoria")
                     campo = "categorias.nome";
-                else if (value == "preco unitario")
+                else if (value == "preço unitário")
                     campo = "produtos.preco_unitario";
             }
         }

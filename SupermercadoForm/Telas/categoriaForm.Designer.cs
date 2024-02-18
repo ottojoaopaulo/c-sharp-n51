@@ -1,6 +1,6 @@
 ﻿namespace SupermercadoForm.Telas
 {
-    partial class categoriaForm
+    partial class CategoriaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             // 
             // buttonCadastrar
             // 
-            buttonCadastrar.Location = new Point(443, 21);
+            buttonCadastrar.Location = new Point(571, 25);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(191, 23);
             buttonCadastrar.TabIndex = 2;
@@ -66,14 +66,14 @@
             // 
             textBoxNome.Location = new Point(155, 21);
             textBoxNome.Name = "textBoxNome";
-            textBoxNome.Size = new Size(157, 23);
+            textBoxNome.Size = new Size(395, 23);
             textBoxNome.TabIndex = 1;
             textBoxNome.KeyDown += textBoxNome_KeyDown;
             textBoxNome.KeyPress += textBoxNome_KeyPress;
             // 
             // buttonListar
             // 
-            buttonListar.Location = new Point(443, 93);
+            buttonListar.Location = new Point(571, 93);
             buttonListar.Name = "buttonListar";
             buttonListar.Size = new Size(191, 23);
             buttonListar.TabIndex = 3;
@@ -83,10 +83,10 @@
             // 
             // richTextBoxCategorias
             // 
-            richTextBoxCategorias.Location = new Point(87, 93);
+            richTextBoxCategorias.Location = new Point(56, 93);
             richTextBoxCategorias.Name = "richTextBoxCategorias";
             richTextBoxCategorias.ReadOnly = true;
-            richTextBoxCategorias.Size = new Size(225, 96);
+            richTextBoxCategorias.Size = new Size(494, 161);
             richTextBoxCategorias.TabIndex = 4;
             richTextBoxCategorias.TabStop = false;
             richTextBoxCategorias.Text = "";
@@ -94,7 +94,7 @@
             // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(443, 239);
+            buttonApagar.Location = new Point(571, 231);
             buttonApagar.Name = "buttonApagar";
             buttonApagar.Size = new Size(191, 23);
             buttonApagar.TabIndex = 5;
@@ -105,7 +105,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 239);
+            label1.Location = new Point(46, 288);
             label1.Name = "label1";
             label1.Size = new Size(46, 15);
             label1.TabIndex = 6;
@@ -113,9 +113,9 @@
             // 
             // textBoxCodigoApagar
             // 
-            textBoxCodigoApagar.Location = new Point(121, 239);
+            textBoxCodigoApagar.Location = new Point(108, 280);
             textBoxCodigoApagar.Name = "textBoxCodigoApagar";
-            textBoxCodigoApagar.Size = new Size(157, 23);
+            textBoxCodigoApagar.Size = new Size(429, 23);
             textBoxCodigoApagar.TabIndex = 4;
             // 
             // labelCodigoParaAlterar
@@ -129,15 +129,15 @@
             // 
             // textBoxCodigoParaAlterar
             // 
-            textBoxCodigoParaAlterar.Location = new Point(102, 348);
+            textBoxCodigoParaAlterar.Location = new Point(121, 348);
             textBoxCodigoParaAlterar.Name = "textBoxCodigoParaAlterar";
-            textBoxCodigoParaAlterar.Size = new Size(54, 23);
+            textBoxCodigoParaAlterar.Size = new Size(135, 23);
             textBoxCodigoParaAlterar.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(202, 352);
+            label3.Location = new Point(285, 348);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 10;
@@ -146,7 +146,7 @@
             // 
             // buttonAlterar
             // 
-            buttonAlterar.Location = new Point(443, 348);
+            buttonAlterar.Location = new Point(571, 348);
             buttonAlterar.Name = "buttonAlterar";
             buttonAlterar.Size = new Size(191, 23);
             buttonAlterar.TabIndex = 8;
@@ -156,9 +156,9 @@
             // 
             // textBoxNomeParaAlterar
             // 
-            textBoxNomeParaAlterar.Location = new Point(269, 347);
+            textBoxNomeParaAlterar.Location = new Point(360, 352);
             textBoxNomeParaAlterar.Name = "textBoxNomeParaAlterar";
-            textBoxNomeParaAlterar.Size = new Size(117, 23);
+            textBoxNomeParaAlterar.Size = new Size(190, 23);
             textBoxNomeParaAlterar.TabIndex = 7;
             // 
             // categoriaForm

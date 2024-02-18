@@ -10,7 +10,7 @@
         private void buttonCategorias_Click(object sender, EventArgs e)
         {
             //instancia um objeto do form de estante
-            categoriaForm form = new categoriaForm();
+            CategoriaForm form = new CategoriaForm();
             //tornar um form visivel
             form.ShowDialog();
         }

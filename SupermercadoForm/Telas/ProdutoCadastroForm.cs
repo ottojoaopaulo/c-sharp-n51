@@ -23,12 +23,10 @@ namespace SupermercadoForm.Telas
 
                 comboBoxCategorias.Items.Add(categoria);
             }
-
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-
             var categoria = (Categoria)comboBoxCategorias.SelectedItem;
 
             var nome = textBoxNome.Text;
