@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SupermercadoForm.Modelos
+﻿namespace SupermercadoForm.Modelos
 {
-    internal class ProdutoFiltros
+    public class ProdutoFiltros
     {
         //GET e utilizado para obter o dado
         //SET e utilizado para definir o dado

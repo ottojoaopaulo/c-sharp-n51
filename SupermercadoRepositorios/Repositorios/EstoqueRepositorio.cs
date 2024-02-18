@@ -1,9 +1,4 @@
-﻿using SupermercadoForm.BancoDados;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SupermercadoRepositorios.BancoDados;
 
 namespace SupermercadoForm.Repositorios
 {

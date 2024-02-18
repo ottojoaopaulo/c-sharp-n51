@@ -1,10 +1,10 @@
-﻿namespace SupermercadoForm.Entidades
+﻿namespace SupermercadoRepositorios.Entidades
 {
     //Entidade e uma forma de representar ama tabela em objetos
-    internal class Categoria
+    public class Categoria
     {
-      
-        public int Id {  get; set; }
+
+        public int Id { get; set; }
         public string Nome { get; set; }
     }
 }

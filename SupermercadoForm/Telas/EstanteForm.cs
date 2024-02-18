@@ -1,6 +1,5 @@
-﻿using SupermercadoForm.Entidades;
-using SupermercadoForm.Repositorios;
-using System.Data.SqlClient;
+﻿using SupermercadoForm.Repositorios;
+using SupermercadoRepositorios.Entidades;
 
 namespace SupermercadoForm.Telas
 {
@@ -122,28 +121,9 @@ namespace SupermercadoForm.Telas
                 return;
             }
 
-
-            //conectar com banco de dados
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = ConnectionString;
-            conexao.Open();
-
-            //definir o comando da consulta das estantes
-            SqlCommand comando = conexao.CreateCommand();
-            comando.CommandText = "DELETE FROM estantes WHERE id = @ID";
-            comando.Parameters.AddWithValue("@ID", id);
-
-            int quantidadeRegistrosAfetados = comando.ExecuteNonQuery();
-
-            if (quantidadeRegistrosAfetados > 0)
-            {
-                ListarEstantes();
-                MessageBox.Show("Estante apagada com sucesso");
-
-            }
-
-            //fecha a conexao com DB
-            conexao.Close();
+            repositorio.Apagar(id);
+            ListarEstantes();
+            MessageBox.Show("Estante apagada com sucesso");
 
         }
 

@@ -1,10 +1,10 @@
-﻿using SupermercadoForm.BancoDados;
-using SupermercadoForm.Entidades;
+﻿using SupermercadoRepositorios.BancoDados;
+using SupermercadoRepositorios.Entidades;
 using System.Data;
 
 namespace SupermercadoForm.Repositorios
 {
-    internal class EstanteRepositorio : IEstanteRepositorio
+    public class EstanteRepositorio : IEstanteRepositorio
     {
         private ConexaoBancoDados conexao;
         public EstanteRepositorio()
@@ -84,7 +84,7 @@ namespace SupermercadoForm.Repositorios
 
             var comando = conexao.Conectar();
 
-            comando.CommandText = "SELECT id , nome, sigla FROM estantes nome LIKE @PESQUISA";
+            comando.CommandText = "SELECT id , nome, sigla FROM estantes WHERE nome LIKE @PESQUISA";
 
             comando.Parameters.AddWithValue("@PESQUISA", pesquisa);
 
