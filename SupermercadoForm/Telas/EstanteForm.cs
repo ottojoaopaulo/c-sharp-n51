@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SupermercadoForm.Telas
 {
     public partial class EstanteForm : Form
     {
-        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\74639\\Desktop\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True";
+        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\17 02 2024\\Banco de Dados\\BancoDados.mbf.mdf\";Integrated Security=True;Connect Timeout=30";
         private int IdparaEditar = -1;
 
         public EstanteForm()

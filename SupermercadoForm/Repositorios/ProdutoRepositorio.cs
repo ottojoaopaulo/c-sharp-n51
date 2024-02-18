@@ -1,5 +1,6 @@
 ﻿using SupermercadoForm.BancoDados;
 using SupermercadoForm.Entidades;
+using SupermercadoForm.Modelos;
 using System.Data;
 
 namespace SupermercadoForm.Repositorios
@@ -22,13 +23,13 @@ namespace SupermercadoForm.Repositorios
             comando.Connection.Close();
         }
 
-        public List<Produto> ObterTodos()
+        public List<Produto> ObterTodos(ProdutoFiltros produtoFiltros)
         {
             var conexao = new ConexaoBancoDados();
 
             var comando = conexao.Conectar();
 
-            comando.CommandText = """
+            comando.CommandText = $"""
                 SELECT 
                 produtos.id,
                 produtos.nome,
@@ -38,9 +39,19 @@ namespace SupermercadoForm.Repositorios
 
              FROM produtos
 
-                -- JOIN:consulta de multiplas tabelas;
-                INNER JOIN categorias ON (produtos.Id_categoria = categorias.Id);
+                -- JOIN:consulta de multi tabelas;
+                INNER JOIN categorias ON (produtos.id_categoria = categorias.id)
+
+                WHERE produtos.nome LIKE @PESQUISA
+                ORDER BY {produtoFiltros.OrdenacaoCampo} {produtoFiltros.OrdenacaoOrdem}
+                OFFSET @POSICAO_PAGINACAO ROWS -- determinar qual sera a pagina
+                FETCH NEXT @QUANTIDADE ROWS ONLY -- determinar a quantidade de registros consultados
+
              """;
+
+            comando.Parameters.AddWithValue("@PESQUISA", produtoFiltros.Pesquisa);
+            comando.Parameters.AddWithValue("@QUANTIDADE", produtoFiltros.Quantidade);
+            comando.Parameters.AddWithValue("@POSICAO_PAGINACAO", produtoFiltros.Pagina);
 
             //instanciando uma tabela em memoria para armazenar os registros retornados pelo BD na consulta SELECT
             var tabelaEmMemoria = new DataTable();
@@ -74,6 +85,21 @@ namespace SupermercadoForm.Repositorios
             }
 
             return produtos;
+        }
+
+        public int ObterQuantidadeTotalRegistros()
+        {
+            //instancia um objeto que realiza a conexao com banco de dados
+            var conexao = new ConexaoBancoDados();
+            //criando o comando utilizando a conexao
+            var comando = conexao.Conectar();
+            //definir o comando de criar produto na tabela de produtos
+            comando.CommandText = "SELECT COUNT(id) FROM produtos";
+            //ExecuteScalar executara o comando no banco de dados com o objetivo de obter um numero inteiro
+            var registroQuantidade = Convert.ToInt32(comando.ExecuteScalar());
+            //fechar a conexao
+            comando.Connection.Close();
+            return registroQuantidade;
         }
     }
 }

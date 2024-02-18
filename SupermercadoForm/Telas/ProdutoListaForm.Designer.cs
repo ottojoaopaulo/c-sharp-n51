@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridViewProdutos = new DataGridView();
+            ColumnId = new DataGridViewTextBoxColumn();
+            ColumnNome = new DataGridViewTextBoxColumn();
+            ColumnCategoria = new DataGridViewTextBoxColumn();
+            ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
             buttonEditar = new Button();
             buttonApagar = new Button();
             labelQuantidadetotal = new Label();
@@ -40,14 +44,12 @@
             buttonLimparFiltros = new Button();
             comboBoxQuantidade = new ComboBox();
             comboBoxExibir = new ComboBox();
-            comboBoxPesquisar = new ComboBox();
             buttonNovo = new Button();
             comboBoxOrdenar = new ComboBox();
             labelOrdenar = new Label();
-            ColumnId = new DataGridViewTextBoxColumn();
-            ColumnNome = new DataGridViewTextBoxColumn();
-            ColumnCategoria = new DataGridViewTextBoxColumn();
-            ColumnPrecoUnitario = new DataGridViewTextBoxColumn();
+            textBoxPesquisa = new TextBox();
+            buttonPaginacaoAnterior = new Button();
+            buttonPaginacaoProximo = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             SuspendLayout();
             // 
@@ -62,6 +64,32 @@
             dataGridViewProdutos.ReadOnly = true;
             dataGridViewProdutos.Size = new Size(624, 296);
             dataGridViewProdutos.TabIndex = 0;
+            // 
+            // ColumnId
+            // 
+            ColumnId.HeaderText = "Codigo";
+            ColumnId.Name = "ColumnId";
+            ColumnId.ReadOnly = true;
+            ColumnId.Width = 80;
+            // 
+            // ColumnNome
+            // 
+            ColumnNome.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnNome.HeaderText = "Nome";
+            ColumnNome.Name = "ColumnNome";
+            ColumnNome.ReadOnly = true;
+            // 
+            // ColumnCategoria
+            // 
+            ColumnCategoria.HeaderText = "Categoria";
+            ColumnCategoria.Name = "ColumnCategoria";
+            ColumnCategoria.ReadOnly = true;
+            // 
+            // ColumnPrecoUnitario
+            // 
+            ColumnPrecoUnitario.HeaderText = "Preco Unitario";
+            ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
+            ColumnPrecoUnitario.ReadOnly = true;
             // 
             // buttonEditar
             // 
@@ -135,6 +163,7 @@
             buttonPesquisar.TabIndex = 11;
             buttonPesquisar.Text = "Pesquisar";
             buttonPesquisar.UseVisualStyleBackColor = true;
+            buttonPesquisar.Click += buttonPesquisar_Click;
             // 
             // buttonLimparFiltros
             // 
@@ -144,6 +173,7 @@
             buttonLimparFiltros.TabIndex = 10;
             buttonLimparFiltros.Text = "Limpar Filtros";
             buttonLimparFiltros.UseVisualStyleBackColor = true;
+            buttonLimparFiltros.Click += buttonLimparFiltros_Click;
             // 
             // comboBoxQuantidade
             // 
@@ -153,6 +183,7 @@
             comboBoxQuantidade.Name = "comboBoxQuantidade";
             comboBoxQuantidade.Size = new Size(121, 23);
             comboBoxQuantidade.TabIndex = 12;
+            comboBoxQuantidade.SelectedIndexChanged += comboBoxQuantidade_SelectedIndexChanged;
             // 
             // comboBoxExibir
             // 
@@ -162,14 +193,7 @@
             comboBoxExibir.Name = "comboBoxExibir";
             comboBoxExibir.Size = new Size(121, 23);
             comboBoxExibir.TabIndex = 13;
-            // 
-            // comboBoxPesquisar
-            // 
-            comboBoxPesquisar.FormattingEnabled = true;
-            comboBoxPesquisar.Location = new Point(415, 38);
-            comboBoxPesquisar.Name = "comboBoxPesquisar";
-            comboBoxPesquisar.Size = new Size(233, 23);
-            comboBoxPesquisar.TabIndex = 14;
+            comboBoxExibir.SelectedIndexChanged += comboBoxExibir_SelectedIndexChanged;
             // 
             // buttonNovo
             // 
@@ -189,6 +213,7 @@
             comboBoxOrdenar.Name = "comboBoxOrdenar";
             comboBoxOrdenar.Size = new Size(121, 23);
             comboBoxOrdenar.TabIndex = 17;
+            comboBoxOrdenar.SelectedIndexChanged += comboBoxOrdenar_SelectedIndexChanged;
             // 
             // labelOrdenar
             // 
@@ -199,39 +224,45 @@
             labelOrdenar.TabIndex = 16;
             labelOrdenar.Text = "Ordenar";
             // 
-            // ColumnId
+            // textBoxPesquisa
             // 
-            ColumnId.HeaderText = "Codigo";
-            ColumnId.Name = "ColumnId";
-            ColumnId.ReadOnly = true;
+            textBoxPesquisa.Location = new Point(415, 38);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(233, 23);
+            textBoxPesquisa.TabIndex = 18;
+            textBoxPesquisa.KeyDown += textBoxPesquisa_KeyDown;
             // 
-            // ColumnNome
+            // buttonPaginacaoAnterior
             // 
-            ColumnNome.HeaderText = "Nome";
-            ColumnNome.Name = "ColumnNome";
-            ColumnNome.ReadOnly = true;
+            buttonPaginacaoAnterior.Location = new Point(24, 421);
+            buttonPaginacaoAnterior.Name = "buttonPaginacaoAnterior";
+            buttonPaginacaoAnterior.Size = new Size(75, 23);
+            buttonPaginacaoAnterior.TabIndex = 19;
+            buttonPaginacaoAnterior.Text = "Anterior";
+            buttonPaginacaoAnterior.UseVisualStyleBackColor = true;
+            buttonPaginacaoAnterior.Click += buttonPaginacaoAnterior_Click;
             // 
-            // ColumnCategoria
+            // buttonPaginacaoProximo
             // 
-            ColumnCategoria.HeaderText = "Categoria";
-            ColumnCategoria.Name = "ColumnCategoria";
-            ColumnCategoria.ReadOnly = true;
-            // 
-            // ColumnPrecoUnitario
-            // 
-            ColumnPrecoUnitario.HeaderText = "Preco Unitario";
-            ColumnPrecoUnitario.Name = "ColumnPrecoUnitario";
-            ColumnPrecoUnitario.ReadOnly = true;
+            buttonPaginacaoProximo.Location = new Point(112, 421);
+            buttonPaginacaoProximo.Name = "buttonPaginacaoProximo";
+            buttonPaginacaoProximo.Size = new Size(75, 23);
+            buttonPaginacaoProximo.TabIndex = 20;
+            buttonPaginacaoProximo.Text = "Proximo";
+            buttonPaginacaoProximo.UseVisualStyleBackColor = true;
+            buttonPaginacaoProximo.Click += buttonPaginacaoProximo_Click;
             // 
             // ProdutoListaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(761, 450);
+            Controls.Add(buttonPaginacaoProximo);
+            Controls.Add(buttonPaginacaoAnterior);
+            Controls.Add(textBoxPesquisa);
             Controls.Add(comboBoxOrdenar);
             Controls.Add(labelOrdenar);
             Controls.Add(buttonNovo);
-            Controls.Add(comboBoxPesquisar);
             Controls.Add(comboBoxExibir);
             Controls.Add(comboBoxQuantidade);
             Controls.Add(buttonPesquisar);
@@ -269,9 +300,11 @@
         private Button buttonLimparFiltros;
         private ComboBox comboBoxQuantidade;
         private ComboBox comboBoxExibir;
-        private ComboBox comboBoxPesquisar;
         private Button buttonNovo;
         private ComboBox comboBoxOrdenar;
+        private TextBox textBoxPesquisa;
+        private Button buttonPaginacaoAnterior;
+        private Button buttonPaginacaoProximo;
         private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnCategoria;

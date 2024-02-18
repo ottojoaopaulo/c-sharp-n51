@@ -15,7 +15,7 @@ namespace SupermercadoForm.Telas
 {
     public partial class categoriaForm : Form
     {
-        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\17 02 2024\\Banco de Dados\\BancoDados.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
         public categoriaForm()
         {
             InitializeComponent();
@@ -192,7 +192,7 @@ namespace SupermercadoForm.Telas
 
             SqlConnection conexao = new SqlConnection();
 
-            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Dell\\Documents\\Supermercado.mdf;Integrated Security=True;Connect Timeout=30";
+            conexao.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Dell\\Desktop\\joao\\C#\\C-sharp-n51\\17 02 2024\\Banco de Dados\\BancoDados.mdf\";Integrated Security=True;Connect Timeout=30;Encrypt=True";
 
             conexao.Open();
 
