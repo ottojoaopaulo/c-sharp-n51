@@ -1,6 +1,6 @@
 ﻿using SupermercadoRepositorios.BancoDados;
 
-namespace SupermercadoForm.Repositorios
+namespace SupermercadoRepositorio.Repositorios
 {
     internal class EstoqueRepositorio
     {

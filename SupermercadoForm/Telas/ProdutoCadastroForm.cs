@@ -1,7 +1,7 @@
-﻿using SupermercadoForm.Repositorios;
+﻿using SupermercadoRepositorio.Repositorios;
 using SupermercadoRepositorios.Entidades;
 
-namespace SupermercadoForm.Telas
+namespace SupermercadoRepositorio.Telas
 {
     public partial class ProdutoCadastroForm : Form
     {
@@ -13,16 +13,30 @@ namespace SupermercadoForm.Telas
 
         private void PreencherDadosCategorias()
         {
-            var categoriaRepositorio = new CategoriaRepositorio();
+            var categoria = (Categoria)comboBoxCategorias.SelectedItem;
 
-            var categorias = categoriaRepositorio.ObterTodos();
+            var nome = textBoxNome.Text;
 
-            for (int i = 0; i < categorias.Count; i++)
+            var precoUnitario = Convert.ToDecimal(textBoxPrecoUnitario.Text);
+
+            var repositorio = new ProdutoRepositorio();
+
+            Produto produto;
+
+            if (IdProdutoEditar == -1)
             {
-                var categoria = categorias[i];
+                produto = new Produto()
+                {
+                    Nome = nome,
+                    PrecoUnitario = precoUnitario,
+                    Categoria = categoria
+                };
 
-                comboBoxCategorias.Items.Add(categoria);
+                repositorio.Cadastrar(produto);
+                MessageBox.Show("Produto cadastrado com sucesso");
+                return;
             }
+
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -34,7 +48,7 @@ namespace SupermercadoForm.Telas
             var idCategotia = 1;
 
             var repositorio = new ProdutoRepositorio();
-            repositorio.Cadastrar(nome, idCategotia, precoUnitario);
+            repositorio.Cadastrar(produto);
             MessageBox.Show("Produtocadastrado com sucesso");
         }
 

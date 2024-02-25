@@ -1,7 +1,7 @@
-using SupermercadoForm.Repositorios;
-using SupermercadoForm.Telas;
+using SupermercadoRepositorio.Repositorios;
+using SupermercadoRepositorio.Telas;
 
-namespace SupermercadoForm
+namespace SupermercadoRepositorio
 {
     internal static class Program
     {

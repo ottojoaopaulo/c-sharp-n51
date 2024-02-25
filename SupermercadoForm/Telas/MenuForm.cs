@@ -1,4 +1,4 @@
-﻿namespace SupermercadoForm.Telas
+﻿namespace SupermercadoRepositorio.Telas
 {
     public partial class MenuForm : Form
     {

@@ -1,7 +1,7 @@
-﻿using SupermercadoForm.Modelos;
-using SupermercadoForm.Repositorios;
+﻿using SupermercadoRepositorio.Modelos;
+using SupermercadoRepositorio.Repositorios;
 
-namespace SupermercadoForm.Telas
+namespace SupermercadoRepositorio.Telas
 {
     public partial class ProdutoListaForm : Form
     {

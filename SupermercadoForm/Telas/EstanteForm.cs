@@ -1,7 +1,7 @@
-﻿using SupermercadoForm.Repositorios;
+﻿using SupermercadoRepositorio.Repositorios;
 using SupermercadoRepositorios.Entidades;
 
-namespace SupermercadoForm.Telas
+namespace SupermercadoRepositorio.Telas
 {
     public partial class EstanteForm : Form
     {
@@ -164,8 +164,7 @@ namespace SupermercadoForm.Telas
             string nome = textBoxNome.Text;
             string sigla = maskedTextBoxSigla.Text;
 
-            var estante = new Estante();
-            estante.Id = IdparaEditar;
+            var estante = repositorio.ObterPorId(IdparaEditar);
             estante.Nome = nome;
             estante.Sigla = sigla;
 
